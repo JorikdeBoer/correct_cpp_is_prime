@@ -17,7 +17,7 @@ int do_main(const std::vector<std::string>& args)
     std::cout << "false\n"; return 0;
     }
     if(value ==2){
-    std::cout << "true\n"; return 1;
+    std::cout << "true\n"; return 0;
     }
     //Complex cases
     for (int denominator=2; denominator!=value-1; ++denominator)
@@ -27,7 +27,7 @@ int do_main(const std::vector<std::string>& args)
         std::cout << "false\n"; return 0;
       }
     }
-   std::cout << "true\n"; return 1;
+   std::cout << "true\n"; return 0;
   }
   catch (const std::invalid_argument&)
   {
