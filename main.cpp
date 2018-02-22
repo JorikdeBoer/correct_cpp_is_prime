@@ -27,6 +27,7 @@ int do_main(const std::vector<std::string>& args)
         std::cout << "false\n"; return 0;
       }
     }
+   std::cout << "true\n"; return 1;
   }
   catch (const std::invalid_argument&)
   {
@@ -45,6 +46,8 @@ int main(int argc, char* argv[])
     assert(do_main( { "is_prime" } ) == 1);
     assert(do_main( { "is_prime", "4" } ) == 0);
     assert(do_main( { "is_prime", "3" } ) == 0);
+    assert(do_main( { "is_prime", "2" } ) == 0);
+    assert(do_main( { "is_prime", "123456789101112131415161718" } ) == 1);
     assert(do_main( { "is_prime", "nonsense" } ) == 1);
     assert(do_main( { "is_prime", "7","42" } ) == 1);
     assert(do_main( { "is_prime", "-4" } ) == 0);
