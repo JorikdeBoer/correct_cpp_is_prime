@@ -12,16 +12,13 @@ int do_main(const std::vector<std::string>& args)
   }
   try
   {
-    const int value{std::stoi(args[1])};
-    // -1: unknown
-    //  0: false
-    //  1: true
-    int is_prime = -1;
-
-    //Trivial cases
-    if (value < 2) is_prime = 0;
-    if (is_prime == -1 && value == 2) is_prime = 1;
-
+    const int value = std::stoi(args[1]);
+    if(value < 2){
+    std::cout << "false\n"; return 0;
+    }
+    if(value ==2){
+    std::cout << "true\n"; return 1;   
+    }
     //Complex cases
     for (int denominator=2; denominator!=value-1; ++denominator)
     {
